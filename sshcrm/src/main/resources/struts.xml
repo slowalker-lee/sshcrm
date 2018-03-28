@@ -7,9 +7,15 @@
 
 	<constant name="struts.devMode" value="true" />
 
-	<package name="crm" extends="struts-default">
-		<action name="index">
+	<package name="index" namespace="/" extends="struts-default">
+		<action name="*">
 			<result>/index.jsp</result>
+		</action>
+	</package>
+	
+	<package name="SysUserGroup" namespace="/sys" extends="struts-default">
+		<action name="sysUserGroup_*" class="com.slowalker.sshcrm.web.action.SysUserGroupAction" method="{1}">
+			<result name="success">/WEB-INF/success.jsp</result>
 		</action>
 	</package>
 

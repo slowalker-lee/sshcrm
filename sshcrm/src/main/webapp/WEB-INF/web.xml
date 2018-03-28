@@ -1,7 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-xmlns="http://java.sun.com/xml/ns/javaee" 
-xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+<?xml version="1.0" encoding="UTF-8"?> 
+<web-app version="3.1" metadata-complete="true"
+		 xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee   
+            http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
   <display-name>crm</display-name>
   <welcome-file-list>
     <welcome-file>index.html</welcome-file>
@@ -15,6 +17,17 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
 	<welcome-file-list>
 		<welcome-file>index</welcome-file>
 	</welcome-file-list>
+	
+	  <!--  自定义Spring主配置文件的位置 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:applicationContext.xml</param-value>
+	</context-param>
+  
+  <!-- 使用ContextLoaderListener初始化Spring容器 -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
 
 	<filter>
 		<filter-name>struts2</filter-name>
